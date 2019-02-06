@@ -1,0 +1,62 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio (https://startbootstrap.com/template-overviews/3-col-portfolio)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio/blob/master/LICENSE)
+ */
+
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+body {
+	background-color: black;
+  padding-top: 54px;
+}
+
+.mainContainer {
+	background-color: white;
+	padding-top: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.launchControlBar {
+	background-color: gray;
+	padding-top: 10px;
+	padding-left: 100px;
+	padding-right: 50px;
+	padding-bottom: 5px;
+}
+
+.login-text {
+	color: white;
+	position: center;
+	padding: 5px;
+}
+
+.navImages {
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.mapContainer{
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+	margin-top:25px;
+  margin-bottom: 25px;
+}

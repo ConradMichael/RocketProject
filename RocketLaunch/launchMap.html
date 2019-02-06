@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rad-Launches.Net</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"> World Launch Map </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="launchMap.html">Map
+                <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<script src="JS.js"></script>
+	
+	<div style="color:white"> 
+		<input type="image" src="usa.png" height="30" width="50" onclick="switchGoogleMapsSearch('All')"> All </input>
+		<input type="image" src="usa.png" height="30" width="50" onclick="switchGoogleMapsSearch('USA')"> USA </input>
+		<input type="image" src="gb.png" height="30" width="50" onclick="switchGoogleMapsSearch('UnitedKingdom')"> UK </input>
+		<input type="image" src="china.png" height="30" width="50" onclick="switchGoogleMapsSearch('China')"> China </input>
+	</div>
+    <div id="launchMaps">
+	<iframe
+	width="1400"
+	height="800"
+	align="middle"
+	src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB2r0E7QlqxCiLzPlsuuCFJGp4RXjBHbOk&q=rocket+launch+site+in+USA" allowfullscreen>
+	</iframe>
+    </div>
+	
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
