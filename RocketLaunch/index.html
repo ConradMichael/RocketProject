@@ -16,7 +16,7 @@
 
   </head>
 
-  <body onload="loadJSON()">
+  <body onload="loadJSON();login('logout')">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -51,7 +51,7 @@
 					<button class="login" onclick="login(document.getElementById('username').value)">Login</button>
 				</li>
 			</div>
-			<div id="logout" class="navbar-nav ml-auto">
+			<div id="logout" style="display:none;" class="navbar-nav ml-auto">
 				<li class="login-text">
 					<button class="login" onclick="login('logout')">Logout</button>
 				</li>
@@ -67,45 +67,60 @@
 		<input onclick="getAllLaunches();launchSwitch('All')" type="image" src="allLaunches.png"></input>
 		</div>
 	
-		<div id="adminBar" class="launchControlBar">
+		<div id="adminBar" style="display:none;" class="launchControlBar">
 		<input onclick="getAllLaunches();launchSwitch('All')" type="image" src="allLaunches.png"></input>
 		<input onclick="launchSwitch('Add')" type="image" src="addLaunch.png"></input>
 		</div>
 		
-		<div id="newLaunch" class="mainContainer">
+		<div id="newLaunch" class="launchForm">
 		<h1> Add New Launch: </h1>
 		
-		<table style="">
-			<th>Launch Title:  </th> 
-			<th>Launch Description:  </th>
-			<th>Launch Cost:  </th>
-			<th>Launch Location: </th>
-			
-			<tr>
-			<td><input id="launchTitle"></input></td>
-			
-			<td><input id="launchDescription"></input></td>
-			
-			<td><input id="launchCost"></input></td>
-			
-			<td><input id="launchLocation"></input></td>
-			</tr>
-			
-		 </table>
+		<form id="launchForm">
+		<p>ID: <br><input id="launchID" class="launchData"></input></p>
+		<p>Title: <br><input id="launchTitle" class="launchData" oninput="updateElement('launchExampleTitle',this.value)"></input></p>
+		<p>The Launch: <br><input id="launchDescription" class="launchData" oninput="updateElement('launchExampleDescription',this.value)" style="width: 400px; height: 150px;"></input></p>
+		<p>Cost: <br><input id="launchCost" class="launchData" oninput="updateElement('launchExampleCost',this.value)"></input></p>
+		<p>Location: <br><input id="launchLocation" class="launchData"></input></p>
+		
+		<p>Company: <br><input id="launchCompany" class="launchData"></input></p>
+		<p>Rocket Load: <br><input id="launchRocketLoad" class="launchData"></input></p>
+		<p>Rocket Type: <br><input id="launchRocketType" class="launchData"></input></p>
+		<p>HTML Image Link: <br><input id="launchImgLink" class="launchData" oninput="updateElement('launchImageLink', this.value, 'image')"></input></p>
+		<p>Image Height: <input id="launchImgHeight" class="launchDataMini" oninput="updateElement('launchImageLink', 'height: this.value px;', 'style')"></input> 
+		Image Width: <input id="launchImgWidth" class="launchDataMini" oninput="updateElement('launchImageLink', 'width: this.value px;', 'style')"></input></p>
+		<input type="button" onclick="updateImage('launchImageLink',document.getElementById('launchImgHeight').value, document.getElementById('launchImgWidth').value)"> Update Image Size </input>
+		<p>Time Of Launch: <br><input id="launchTime" class="launchData"></input></p>
+
+		</form>
 		 <br>
 		<input onclick="addLaunch()" type="image" src="addLaunch2.png"></input>
 		</div>
+		
+		<div id="newLaunchTemplate" class="launchTemplate">
+		
+		<h1>Example of Launch page:</h1><br>		
+		<h2 id="launchExampleTitle" class="boxTemplate">Title: </h2><br>
+		<p id="launchExampleDescription" class="boxTemplate">The Launch: </p><br>
+		<p>Cost:</p><p id="launchExampleCost" class="boxTemplate"> $ </p>
+		<img id="launchImageLink" src="https://spacecoastlaunches.com/wp-content/uploads/2016/08/falcon9.jpg" class="launchImg"></img>
+		
+		</div>
+		
 		<script src="JS.js"></script>
-		<div class="mainContainer">
-      <div id="ToInsert" onload="getAllLaunches()">
-			<table id="myTable1" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"></table>
+		<div class="tableContainer">
+      <div id="ToInsert" onload="getAllLaunches()" class="mainContainer">
+			<table id="myTable1" class="table table-striped table-bordered table-sm"></table>
 			<table id="myTable2" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"></table>
 			<table id="myTable3" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"></table>
-      
-	  </div>
+      </div>
 	  </div>
 
-      <ul class="pagination justify-content-center">
+
+
+    </div>
+
+    <footer class=" footer">      
+	<ul class="pagination justify-content-center footer">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous"  onclick="changeTable('Previous')">
             <span aria-hidden="true">&laquo;</span>
@@ -128,10 +143,6 @@
           </a>
         </li>
       </ul>
-
-    </div>
-
-    <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
       </div>

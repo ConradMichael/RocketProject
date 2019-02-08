@@ -16,7 +16,7 @@
 
   </head>
 
-  <body>
+  <body onload="loadJSON()">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -44,22 +44,27 @@
         </div>
       </div>
     </nav>
-	<script src="JS.js"></script>
+	<script src="launchInformation.js"></script>
+	<div class="Container">
 	
-	<div style="color:white"> 
-		<input type="image" src="usa.png" height="30" width="50" onclick="switchGoogleMapsSearch('All')"> All </input>
-		<input type="image" src="usa.png" height="30" width="50" onclick="switchGoogleMapsSearch('USA')"> USA </input>
-		<input type="image" src="gb.png" height="30" width="50" onclick="switchGoogleMapsSearch('UnitedKingdom')"> UK </input>
-		<input type="image" src="china.png" height="30" width="50" onclick="switchGoogleMapsSearch('China')"> China </input>
+		<div id="newLaunchTemplate" class="mainLaunch">
+		<div class="mainLaunchContainerLeft">
+		<h1 id="launchTitle" class="mainLaunchTitle">Title: </h1><br>
+		<img id="launchImage" src="" class="mainLaunchImage"></img>
+		</div>
+		
+		<div class="mainLaunchContainerRight">
+		<p class="mainLaunchElement"><b>Cost:</b></p><p id="launchCost" class="mainLaunchElement"> $ </p>
+		<p class="mainLaunchElement"><b>The Launch:</b></p><p id="launchDescription" class="mainLaunchElement"></p><br>
+		<p class="mainLaunchElement"><b>Company:</b></p><p id="launchCompany" class="mainLaunchElement"></p><br>
+		<p class="mainLaunchElement"><b>Location:</b></p><p id="launchLocation" class="mainLaunchElement"></p><br>
+		<p class="mainLaunchElement"><b>Rocket Load:</b></p><p id="launchLoad" class="mainLaunchElement"></p><br>
+		<p class="mainLaunchElement"><b>Rocket Type:</b></p><p id="launchRocketType" class="mainLaunchElement"></p><br>
+		<p class="mainLaunchElement"><b>Time:</b></p><p id="launchTime" class="mainLaunchElement"></p><br>
+		</div>
+		
+		</div>
 	</div>
-    <div id="launchMaps">
-	<iframe
-	width="1400"
-	height="800"
-	align="middle"
-	src="https://www.google.com/maps/embed/v1/search?key=AIzaSyB2r0E7QlqxCiLzPlsuuCFJGp4RXjBHbOk&q=rocket+launch+site+in+USA" allowfullscreen>
-	</iframe>
-    </div>
 	
     <footer class="py-5 bg-dark footer">
       <div class="container">
